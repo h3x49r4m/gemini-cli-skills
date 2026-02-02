@@ -1,8 +1,8 @@
 =============================
-Gemini CLI Skills Repository
+Gemini CLI Skills
 =============================
 
-A central repository for `Gemini CLI <https://gemini.google.com/cli>`_ skills.
+A central repository for `Gemini CLI <https://github.com/google-gemini/gemini-cli>`_ skills.
 
 Purpose
 -------
