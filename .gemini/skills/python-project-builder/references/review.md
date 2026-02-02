@@ -12,7 +12,7 @@ This document provides a checklist and best practices for conducting code review
 ## Pre-Review Checklist (Developer):
 1.  **Self-Review**: Have you reviewed your own code thoroughly?
 2.  **Tests**: Are all new and existing tests passing? Is test coverage adequate for new code?
-3.  **Linting/Formatting**: Have you run `poetry run ruff check src/ tests/` and `poetry run black src/ tests/`?
+3.  **Linting/Formatting**: Have you run `uv run ruff check src/ tests/` and `uv run black src/ tests/`?
 4.  **Documentation**: Are docstrings and comments up to date?
 5.  **Requirements**: Does the code meet the specified requirements in `REQUIREMENTS.md`?
 

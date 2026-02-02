@@ -21,7 +21,7 @@ The main workflow is a loop that continues until every item in `REQUIREMENTS.md`
 
 1.  **Define Requirements**: Before writing any code, work with the user to populate `REQUIREMENTS.md`. Use the guidelines in `references/product-requirements.md` to help them create a clear checklist.
 2.  **Design Architecture**: Based on the requirements, discuss and decide on the application's architecture. Follow the principles outlined in `references/architecture.md`.
-3.  **Set Up Project**: Copy the entire contents of the `assets/project_template` directory into the user's new project folder to create the initial structure.
+3.  **Set Up Project**: Copy the entire contents of the `assets/project_template` directory into the user's new project folder to create the initial structure. This template is configured for `uv` (or `pip` with PEP 621 `pyproject.toml`). After copying, instruct the user to initialize the `uv` environment (e.g., `uv venv` and `uv pip install -e .` or `uv sync`).
 
 ### Phase 2: The Development Loop
 

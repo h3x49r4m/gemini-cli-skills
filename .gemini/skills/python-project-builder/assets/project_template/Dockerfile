@@ -7,13 +7,11 @@ WORKDIR /app
 # Add the current directory contents into the container at /app
 COPY . /app
 
-# Install any needed packages specified in pyproject.toml (using poetry)
-# First, install poetry
-RUN pip install poetry
+# Install uv
+RUN pip install uv
 
-# Then, configure poetry and install dependencies
-RUN poetry config virtualenvs.create false \
- && poetry install --no-dev --no-interaction --no-ansi
+# Install any needed packages specified in pyproject.toml (using uv)
+RUN uv pip install --system --no-dev .
 
 # Make port 8000 available to the world outside this container
 EXPOSE 8000

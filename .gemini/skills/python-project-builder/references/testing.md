@@ -9,11 +9,11 @@ This document outlines how to write and run tests for your Python project using 
 *   **Readability**: Tests should be easy to understand.
 
 ## Using `pytest`:
-*   **Installation**: `poetry add --group dev pytest` (already in `pyproject.toml`)
-*   **Running Tests**: `poetry run pytest` (from the project root).
-    *   To run specific tests: `poetry run pytest tests/path/to/module.py::test_function`
-    *   Show verbose output: `poetry run pytest -v`
-    *   Stop on first failure: `poetry run pytest -x`
+*   **Installation**: `uv add pytest --group dev` (already specified in `pyproject.toml` `[project.optional-dependencies.dev]`)
+*   **Running Tests**: `uv run pytest` (from the project root).
+    *   To run specific tests: `uv run pytest tests/path/to/module.py::test_function`
+    *   Show verbose output: `uv run pytest -v`
+    *   Stop on first failure: `uv run pytest -x`
 *   **Test Files**:
     *   Place test files in the `tests/` directory.
     *   Name test files `test_*.py` or `*_test.py`.
@@ -27,6 +27,6 @@ This document outlines how to write and run tests for your Python project using 
 
 ## Code Coverage:
 *   Use `pytest-cov` to measure test coverage.
-*   Installation: `poetry add --group dev pytest-cov`
-*   Run with coverage: `poetry run pytest --cov=src`
-*   Generate HTML report: `poetry run pytest --cov=src --cov-report=html`
+*   Installation: `uv add pytest-cov --group dev`
+*   Run with coverage: `uv run pytest --cov=src`
+*   Generate HTML report: `uv run pytest --cov=src --cov-report=html`

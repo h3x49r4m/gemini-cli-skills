@@ -3,12 +3,11 @@
 This guide covers best practices for writing Python code in this project.
 
 ## Environment Setup:
-1.  **Virtual Environment**: Always use a virtual environment (`python -m venv .venv`).
-    *   Activate: `source .venv/bin/activate` (Linux/macOS) or `.\.venv\Scripts\activate` (Windows).
-2.  **Dependency Management**: Use `poetry` as defined in `pyproject.toml`.
-    *   Install dependencies: `poetry install`
-    *   Add new dependency: `poetry add <package-name>`
-    *   Add dev dependency: `poetry add --group dev <package-name>`
+1.  **Dependency Management**: This project uses `uv` for dependency management, based on `pyproject.toml` (PEP 621).
+    *   **Install all dependencies**: `uv pip install -e .` (This will also create a virtual environment if one doesn't exist).
+    *   **Add new dependency**: `uv add <package-name>`
+    *   **Add new dev dependency**: `uv add <package-name> --group dev`
+    *   **Run scripts/commands**: Use `uv run <command>`. For example, `uv run python src/main.py`.
 
 ## Coding Standards:
 *   **PEP 8**: Adhere to Python's official style guide.
