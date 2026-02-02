@@ -33,15 +33,52 @@ Example::
 
 Usage
 -----
-To add a new skill, create a new directory under ``.gemini/skills/``
-and populate it with the necessary ``SKILL.md`` and supporting files.
+Skills extend the capabilities of the Gemini CLI by providing specialized knowledge and workflows.
 
-The Gemini CLI automatically discovers skills located in its designated skill directories.
-Once a skill is defined, it can be activated within a conversation
-using the ``activate_skill`` command, following the instructions provided
-by the skill itself.
+**1. Skill Discovery and Activation:**
+    The Gemini CLI continuously monitors its designated skill directories (e.g., ``.gemini/skills/``)
+    for new or updated skills. When a user's request aligns with a skill's
+    ``description`` (defined in its ``SKILL.md``), the CLI may choose to
+    ``activate_skill``.
 
-For more details on skill creation and usage, refer to the Gemini CLI documentation.
+    For example, if a skill has the description "Guides the creation of a
+    production-quality Python project...", the Gemini CLI might activate
+    it in response to a prompt like "build a Python app".
+
+    Once activated, the skill's ``instructions`` and ``available_resources``
+    are made available to the agent, guiding its subsequent actions.
+
+**2. Managing Skills:**
+    *   **Adding/Updating Skills**: To add a new skill or update an existing one,
+        create/modify its directory and ``SKILL.md`` within ``.gemini/skills/``.
+        For structured skill development, consider using the ``skill-creator``
+        skill itself.
+
+    *   **Reloading Skills**: If you manually change skill files, use the
+        ``/skills reload`` command in the CLI to ensure the Gemini CLI
+        recognizes the changes without restarting.
+
+**3. Gemini CLI Commands:**
+    The Gemini CLI provides commands to manage skills:
+
+    *   **/skills list**: Lists all skills discovered by the Gemini CLI.
+        This command shows the name and description of each skill, helping users
+        to identify available functionalities.
+
+        Example usage in Gemini CLI::
+
+            /skills list
+
+    *   **/skills reload**: Reloads all skills from their respective directories.
+        Use this command after adding, removing, or modifying skill files
+        (e.g., ``SKILL.md``) to ensure the Gemini CLI recognizes the changes
+        without requiring a full restart.
+
+        Example usage in Gemini CLI::
+
+            /skills reload
+
+For more details on skill creation and advanced usage, refer to the Gemini CLI documentation.
 
 Contributing
 ------------
