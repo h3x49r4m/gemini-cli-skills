@@ -23,7 +23,11 @@ Each skill resides in its own subdirectory, containing:
 Example::
 
     .gemini/skills/
-    ├── python-project-builder/
+    ├── python-project-builder-interactive/
+    │   ├── SKILL.md
+    │   ├── assets/
+    │   └── references/
+    ├── python-project-builder-tdd/
     │   ├── SKILL.md
     │   ├── assets/
     │   └── references/
@@ -47,6 +51,12 @@ Skills extend the capabilities of the Gemini CLI by providing specialized knowle
 
     Once activated, the skill's ``instructions`` and ``available_resources``
     are made available to the agent, guiding its subsequent actions.
+
+    **Available Skills:**
+
+    *   **python-project-builder-interactive**: Guides the creation of a production-quality Python project using an iterative development approach from requirements to deployment. Use when asked to "build a Python app" or "code a Python project."
+
+    *   **python-project-builder-tdd**: Similar to the interactive builder but follows Test-Driven Development (TDD) methodology with Red-Green-Refactor cycles. Use when asked to "build a Python app using TDD" or "code a Python project with test-driven development."
 
 **2. Managing Skills:**
     *   **Adding/Updating Skills**: To add a new skill or update an existing one,
